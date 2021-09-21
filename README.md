@@ -1,15 +1,24 @@
-**Data:**
+# Capstone 1 - Comparing Tennis Players from the Past Decade
+
+<p align="center"> <a href="https://docs.google.com/presentation/d/1ergeUd-3yKRYDboZVsn6XLTp1zicp76Pi_rsCAbOhSc/edit#slide=id.p">Presentation</a></p>
+
+## Table of Contents
+- [Background](#background)
+- [Data](#data)
+- [EDA](#exploratory-data-analysis)
+- [Hypothesis Tests](#hypothesis-testing)
+- [Results](#final-conclusion)
+
+## Background
+For my first capstone project I wanted to compare tennis players throughout the past decade. Since covid canceled the 2020 season and the 2021 season is still ongoing I looked at seasons 2010-2019. The motivation for this stems from the fact that I grew up in a household where tennis was popular, but I never could contribute much to conversations so I wanted to explore the data to gain a better insight into the sport.
+
+## Data
 * [ATP Tennis 2019](https://github.com/JeffSackmann/tennis_atp/blob/master/atp_matches_2019.csv)
 * [Extra Data](https://github.com/JeffSackmann/tennis_atp)
 
 **Desc:** Dataset includes stats for every tournament played in 2019 including player name, tournament, court surface, winner, loser, score, 1st serve, 2nd serve and many more. Things I can explore with this data would be if first serves made correlate to more matches won? Are there more breakpoints on harder surfaces (hard, grass) than slower surfaces (clay)? Reject or fail to reject that certain parts of the world perform better on certain surfaces. I could also compare generations and see which stats are most important for people that win. Taking that a step further, in recent generations tennis has been dominated by a few athletes; (ie: Federer, Nadal, Djokovic) I could see which stats for lower rank players are good indicators that they will be able to beat them. Test the hypothesis that these indicators do in fact lead to upsets of those 3 players.
 
-# Capstone 1
-
-## Background
-For my first capstone project I wanted to compare tennis players throughout the past decade. Since covid canceled the 2020 season and the 2021 season is still ongoing I looked at seasons 2010-2019. The motivation for this stems from the fact that I grew up in a household where tennis was popular, but I never could contribute much to conversations so I wanted to explore the data to gain a better insight into the sport.
-
-## EDA - Exploratory Data Analysis
+## Exploratory Data Analysis
 When it came to selecting who to focus on I looked at players total wins, which has been dominated by three individuals during this time period.
 
   1. Novak Djokovic
@@ -49,9 +58,9 @@ The final thing I explored was how the three players compared to remaining field
 
 As you can see the trio perform much better than average at both maximizing aces per match and minimizing the number of double faults per match.
 
-# Hypothesis Testing
+## Hypothesis Testing
 
-## Hypothesis Test 1
+### Hypothesis Test 1
 
 Utilizing the MannWhitneyU test I faced each other three chosen tennis players up against each other in order to determine the ultimate winner. The first of the matchups was Federer vs Nadal and my hypotheses were as follows:
 
@@ -76,7 +85,7 @@ $$ \alpha = 0.05 $$
 
 The Mann-Whitney U test is the nonparametric equivalent of the two sample t-test. While the t-test makes an assumption about the distribution of a population (i.e. that the sample came from a t-distributed population), the Mann Whitney U Test makes no such assumption. It compares every metric I used for every match these two played. The "____ wins" is the test statistic that is returned from the function and we use the p-value to decided whether or not we reject the null hypothesis. If the p-value is *less than* the alpha value we set at 0.05 then we reject the null hypothesis and can say that Federer is better than Nadal in terms of that metric. Then I totaled up how many times we rejected or failed to reject the null hypothesis to determine who won the individual match-up. In this case we rejected the null hypothesis 6/10 times so Federer beat Nadal.
 
-## Hypothesis Test 2
+### Hypothesis Test 2
 
 Federer moved along to the second match-up against the assumed winner, Djokovic.
 
@@ -120,7 +129,7 @@ The other unique factor about tennis to take into account is the fact that the p
 
 These different surfaces have a significant impact on player performance as well. Federer tends to favor grass surfaces, but the least amount of matches per season are played on grass. And although he doesn't perform poorly on hard court, he has to deal with Djokovic who tends to be the most dominate on hard court, making those major tournament wins & titles more difficult to come by. 
 
-## Hypothesis Test 3
+### Hypothesis Test 3
 
 As a sanity check I performed the final hypothesis test with Nadal and Djokovic. Here I'd be very surprised if Djokovic lost to Nadal.
 
@@ -149,7 +158,7 @@ $$ \alpha = 0.05 $$
 Thankfully, I wasn't surprised with the results this time. We rejected the null hypothesis only 1/10 so we can say that Nadal is less than or equal to Djokovic in terms of every metric except for double faults. 
 
 
-# Final Conclusion
+## Final Conclusion
 After performing these hypothesis tests my final ranking of the players is:
   1. Federer
   2. Djokovic
